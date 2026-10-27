@@ -1,0 +1,698 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TeleStack - LIFO Downloader</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         LEFT SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo-area">
+
+            <div class="logo">
+                ➤
+            </div>
+
+            <div>
+                <h2>TeleStack</h2>
+                <p>Video Channel</p>
+            </div>
+
+        </div>
+
+
+        <div class="channel">
+
+            <div class="channel-image">
+                SV
+            </div>
+
+            <div>
+                <h3>Student Videos</h3>
+                <p>10 videos available</p>
+            </div>
+
+        </div>
+
+
+        <div class="about-stack">
+
+            <h3>Download Stack</h3>
+
+            <p>
+                Last In, First Out
+            </p>
+
+            <div
+                class="stack-counter"
+                id="stackCounter">
+                0
+            </div>
+
+            <span>
+                Active Downloads
+            </span>
+
+        </div>
+
+
+        <div class="instructions">
+
+            <h3>How it works</h3>
+
+            <p>
+                1. Select a video.
+            </p>
+
+            <p>
+                2. The video enters the stack.
+            </p>
+
+            <p>
+                3. The newest video gets priority.
+            </p>
+
+            <p>
+                4. Completed videos are popped.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         VIDEO CHANNEL
+    ========================== -->
+
+    <main class="channel-area">
+
+        <header class="channel-header">
+
+            <div class="header-avatar">
+                SV
+            </div>
+
+            <div>
+                <h2>Student Videos</h2>
+                <p>
+                    10 videos • Online
+                </p>
+            </div>
+
+        </header>
+
+
+        <section
+            class="video-list"
+            id="videoList">
+
+
+            <!-- VIDEO 1 -->
+
+            <article class="video-card">
+
+                <div class="thumbnail t1">
+
+                    <span class="play-button">
+                        ▶
+                    </span>
+
+                    <span class="duration">
+                        05:32
+                    </span>
+
+                </div>
+
+                <div class="video-content">
+
+                    <h3>
+                        Introduction to JavaScript
+                    </h3>
+
+                    <p>
+                        Learn the basics of JavaScript programming.
+                    </p>
+
+                    <div class="video-actions">
+
+                        <span>
+                            45 MB
+                        </span>
+
+                        <button
+                            onclick="startDownload(
+                                1,
+                                'Introduction to JavaScript',
+                                45
+                            )">
+                            Download
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VIDEO 2 -->
+
+            <article class="video-card">
+
+                <div class="thumbnail t2">
+
+                    <span class="play-button">
+                        ▶
+                    </span>
+
+                    <span class="duration">
+                        08:15
+                    </span>
+
+                </div>
+
+                <div class="video-content">
+
+                    <h3>
+                        HTML & CSS Tutorial
+                    </h3>
+
+                    <p>
+                        Learn how to build responsive websites.
+                    </p>
+
+                    <div class="video-actions">
+
+                        <span>
+                            70 MB
+                        </span>
+
+                        <button
+                            onclick="startDownload(
+                                2,
+                                'HTML & CSS Tutorial',
+                                70
+                            )">
+                            Download
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VIDEO 3 -->
+
+            <article class="video-card">
+
+                <div class="thumbnail t3">
+
+                    <span class="play-button">
+                        ▶
+                    </span>
+
+                    <span class="duration">
+                        12:40
+                    </span>
+
+                </div>
+
+                <div class="video-content">
+
+                    <h3>
+                        Data Structures
+                    </h3>
+
+                    <p>
+                        Learn stacks, queues and arrays.
+                    </p>
+
+                    <div class="video-actions">
+
+                        <span>
+                            95 MB
+                        </span>
+
+                        <button
+                            onclick="startDownload(
+                                3,
+                                'Data Structures',
+                                95
+                            )">
+                            Download
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VIDEO 4 -->
+
+            <article class="video-card">
+
+                <div class="thumbnail t4">
+
+                    <span class="play-button">
+                        ▶
+                    </span>
+
+                    <span class="duration">
+                        06:25
+                    </span>
+
+                </div>
+
+                <div class="video-content">
+
+                    <h3>
+                        Python Programming
+                    </h3>
+
+                    <p>
+                        Introduction to Python programming.
+                    </p>
+
+                    <div class="video-actions">
+
+                        <span>
+                            55 MB
+                        </span>
+
+                        <button
+                            onclick="startDownload(
+                                4,
+                                'Python Programming',
+                                55
+                            )">
+                            Download
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VIDEO 5 -->
+
+            <article class="video-card">
+
+                <div class="thumbnail t5">
+
+                    <span class="play-button">
+                        ▶
+                    </span>
+
+                    <span class="duration">
+                        10:18
+                    </span>
+
+                </div>
+
+                <div class="video-content">
+
+                    <h3>
+                        Cybersecurity Basics
+                    </h3>
+
+                    <p>
+                        Introduction to cybersecurity.
+                    </p>
+
+                    <div class="video-actions">
+
+                        <span>
+                            82 MB
+                        </span>
+
+                        <button
+                            onclick="startDownload(
+                                5,
+                                'Cybersecurity Basics',
+                                82
+                            )">
+                            Download
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VIDEO 6 -->
+
+            <article class="video-card">
+
+                <div class="thumbnail t6">
+
+                    <span class="play-button">
+                        ▶
+                    </span>
+
+                    <span class="duration">
+                        07:45
+                    </span>
+
+                </div>
+
+                <div class="video-content">
+
+                    <h3>
+                        Networking Fundamentals
+                    </h3>
+
+                    <p>
+                        Learn computer networking concepts.
+                    </p>
+
+                    <div class="video-actions">
+
+                        <span>
+                            65 MB
+                        </span>
+
+                        <button
+                            onclick="startDownload(
+                                6,
+                                'Networking Fundamentals',
+                                65
+                            )">
+                            Download
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VIDEO 7 -->
+
+            <article class="video-card">
+
+                <div class="thumbnail t7">
+
+                    <span class="play-button">
+                        ▶
+                    </span>
+
+                    <span class="duration">
+                        09:20
+                    </span>
+
+                </div>
+
+                <div class="video-content">
+
+                    <h3>
+                        Database Management
+                    </h3>
+
+                    <p>
+                        Learn SQL and database concepts.
+                    </p>
+
+                    <div class="video-actions">
+
+                        <span>
+                            76 MB
+                        </span>
+
+                        <button
+                            onclick="startDownload(
+                                7,
+                                'Database Management',
+                                76
+                            )">
+                            Download
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VIDEO 8 -->
+
+            <article class="video-card">
+
+                <div class="thumbnail t8">
+
+                    <span class="play-button">
+                        ▶
+                    </span>
+
+                    <span class="duration">
+                        11:05
+                    </span>
+
+                </div>
+
+                <div class="video-content">
+
+                    <h3>
+                        Ethical Hacking
+                    </h3>
+
+                    <p>
+                        Introduction to ethical hacking.
+                    </p>
+
+                    <div class="video-actions">
+
+                        <span>
+                            90 MB
+                        </span>
+
+                        <button
+                            onclick="startDownload(
+                                8,
+                                'Ethical Hacking',
+                                90
+                            )">
+                            Download
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VIDEO 9 -->
+
+            <article class="video-card">
+
+                <div class="thumbnail t9">
+
+                    <span class="play-button">
+                        ▶
+                    </span>
+
+                    <span class="duration">
+                        13:15
+                    </span>
+
+                </div>
+
+                <div class="video-content">
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                    <p>
+                        Build complete web applications.
+                    </p>
+
+                    <div class="video-actions">
+
+                        <span>
+                            110 MB
+                        </span>
+
+                        <button
+                            onclick="startDownload(
+                                9,
+                                'Web Development',
+                                110
+                            )">
+                            Download
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- VIDEO 10 -->
+
+            <article class="video-card">
+
+                <div class="thumbnail t10">
+
+                    <span class="play-button">
+                        ▶
+                    </span>
+
+                    <span class="duration">
+                        15:30
+                    </span>
+
+                </div>
+
+                <div class="video-content">
+
+                    <h3>
+                        Final Programming Project
+                    </h3>
+
+                    <p>
+                        Complete programming project tutorial.
+                    </p>
+
+                    <div class="video-actions">
+
+                        <span>
+                            130 MB
+                        </span>
+
+                        <button
+                            onclick="startDownload(
+                                10,
+                                'Final Programming Project',
+                                130
+                            )">
+                            Download
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         RIGHT DOWNLOAD PANEL
+    ========================== -->
+
+    <aside class="download-area">
+
+        <div class="download-header">
+
+            <div>
+                <h2>Downloads</h2>
+                <p>LIFO Stack</p>
+            </div>
+
+            <div
+                class="download-count"
+                id="downloadCount">
+                0
+            </div>
+
+        </div>
+
+
+        <!-- STACK -->
+
+        <div class="stack-section">
+
+            <div class="section-title">
+
+                <h3>
+                    Download Stack
+                </h3>
+
+                <span>
+                    TOP ↓
+                </span>
+
+            </div>
+
+
+            <div
+                id="stackDisplay">
+
+                <div class="empty">
+                    No downloads yet
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- COMPLETED -->
+
+        <div class="completed-section">
+
+            <h3>
+                Completed
+            </h3>
+
+            <div
+                id="completedDisplay">
+
+                <div class="empty">
+                    Nothing completed yet
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
